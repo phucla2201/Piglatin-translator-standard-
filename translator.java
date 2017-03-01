@@ -13,19 +13,21 @@ public class translator {
 		for (int x=0;x<words.length;x++){
 			String currentWord=words[x];
 			//This is where you do your work
-			currentWord.toLowerCase();
+			String LowercasecurrentWord = currentWord.toLowerCase();
 			//Check if the first is a,e,i,o,u,y
-			if (currentWord.charAt(0)=='a'||currentWord.charAt(0)=='e'
-					||currentWord.charAt(0)=='i'||currentWord.charAt(0)=='o'
-					||currentWord.charAt(0)=='u'||currentWord.charAt(0)=='y'){
+			if (LowercasecurrentWord.charAt(0)=='a'||LowercasecurrentWord.charAt(0)=='e'
+					||LowercasecurrentWord.charAt(0)=='i'||LowercasecurrentWord.charAt(0)=='o'
+					||LowercasecurrentWord.charAt(0)=='u'||LowercasecurrentWord.charAt(0)=='y'){
 				// If it is, add way to your word 
 				currentWord= currentWord+ "way";
 			}
 			else {
 				// If it isn't, take off the first letter,add it to the end of the word and add "ay"
 				String cutoffletter=currentWord.substring(0,1);
+				currentWord= currentWord.substring(1);
+				currentWord= currentWord+cutoffletter+"ay";
 			}
-				output=output+currentWord+"";
+				output=output+currentWord+" ";
 		}
 		System.out.println(output);
 	}
