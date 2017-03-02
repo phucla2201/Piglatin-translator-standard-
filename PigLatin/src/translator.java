@@ -7,6 +7,7 @@ public class translator {
 		String input;
 		String output="";
 		String[] words;
+		//Added stuff
 		System.out.println("Enter a sentence");
 		input= in.nextLine();
 		words=input.split(" ");
