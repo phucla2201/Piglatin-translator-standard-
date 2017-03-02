@@ -20,9 +20,6 @@ public class upgradedtranslator {
 					||LowercasecurrentWord.charAt(0)=='i'||LowercasecurrentWord.charAt(0)=='o'
 					||LowercasecurrentWord.charAt(0)=='u'||LowercasecurrentWord.charAt(0)=='y'){
 				// If it is, add way to your word 
-				String firstchar=currentWord.substring(0,1);
-				firstchar.toUpperCase();
-				currentWord=firstchar+currentWord.substring(1);
 				currentWord= currentWord+ "way";
 			}
 			else {
@@ -33,9 +30,18 @@ public class upgradedtranslator {
 					if(except1stletter.charAt(y)=='a'||except1stletter.charAt(y)=='e'
 							||except1stletter.charAt(y)=='i'||except1stletter.charAt(y)=='o'
 							||except1stletter.charAt(y)=='u'||except1stletter.charAt(y)=='y'){
-						String cutoffletter=currentWord.substring(0,y+1);
-						currentWord= currentWord.substring(y+1);
-						currentWord= currentWord+cutoffletter+"ay";
+						String stletter=currentWord.substring(0,1);
+								if(stletter==stletter.toUpperCase()){
+									String cutoffletter=currentWord.substring(0,y+1);
+									String Uppercaseletter=currentWord.substring(y+1,y+2);
+									currentWord= currentWord.substring(y+2);
+									currentWord= Uppercaseletter.toUpperCase()+currentWord+cutoffletter.toLowerCase()+"ay";
+								}else {
+									String cutoffletter=currentWord.substring(0,y+1);
+									currentWord= currentWord.substring(y+1);
+									currentWord= currentWord+cutoffletter+"ay";
+								}
+
 						break;
 					}
 				}
